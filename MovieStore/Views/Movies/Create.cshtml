@@ -1,0 +1,33 @@
+﻿@model MovieViewModel
+
+@{
+    ViewBag.Title = "Create new Movie";
+}
+
+<form asp-controller="Movies" asp-action="CreateNew" method="post">
+    <div class="container col-md-5">
+        <div class="form-group">
+            <label asp-for="MovieName"></label>
+            <input asp-for="MovieName" class="form-control" autocomplete="off" placeholder="Movie name" />
+            <span asp-validation-for="MovieName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DirectorName"></label>
+            <input asp-for="DirectorName" class="form-control" autocomplete="off" placeholder="Director name" />
+            <span asp-validation-for="DirectorName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ReleaseDate"></label>
+            <input asp-for="ReleaseDate" class="form-control" />
+            <span asp-validation-for="ReleaseDate"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <button type="reset" class="btn btn-outline-danger float-right">Reset</button>
+        </div>
+        <div>
+            <a asp-controller="Movies" asp-action="Index">Back to Index</a>         
+        </div>
+    </div>
+</form>
+

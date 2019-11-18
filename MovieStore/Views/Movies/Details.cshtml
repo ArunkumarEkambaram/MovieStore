@@ -1,0 +1,25 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model MovieStore.Models.Movie
+
+@{
+    ViewBag.Title = "Movie Details";
+}
+
+<div class="jumbotron" style="background-color:white">
+    <h1 class="display-4">Movie Details</h1>
+    <hr />
+    @if (Model != null)
+    {
+        <ul class="list-group col-md-6">
+            <li class="list-group-item active"> @Model.MovieName</li>
+            <li class="list-group-item">@Model.DirectorName</li>
+            <li class="list-group-item"> @Model.ReleaseDate.ToLongDateString()</li>
+        </ul>
+    }
+    else
+    {
+        <h3>Page not found!!!</h3>
+    }
+
+    <a asp-controller="Movies" asp-action="Index">Back to Index</a>
+</div>
